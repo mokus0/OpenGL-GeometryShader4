@@ -1,0 +1,31 @@
+name:                   OpenGL-GeometryShader4
+version:                2.4.0.1
+stability:              provisional
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             None
+license:                PublicDomain
+homepage:               /dev/null
+
+category:               Graphics
+synopsis:               Very rough geometry shader support for OpenGL-2.4.0.1
+description:            A very rough implementation of support for geometry
+                        shaders for use with OpenGL-2.4.0.1.  It does not
+                        integrate very cleanly and is largely coded via cut
+                        and paste from the OpenGL package sources, but it is
+                        significantly more convenient than working with
+                        OpenGLRaw, and it's good enough for me until support
+                        for geometry shaders makes it into the OpenGL package.
+
+Library
+  hs-source-dirs:       src
+  ghc-options:          -fwarn-unused-imports -fwarn-unused-binds -fwarn-tabs
+  exposed-modules:      Graphics.Rendering.OpenGL.GL.Shaders.Geometry
+  build-depends:        base >= 4 && <5, 
+                        OpenGL==2.4.0.1, 
+                        OpenGLRaw==1.1.0.1, 
+                        StateVar, 
+                        ObjectName
