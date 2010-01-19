@@ -15,10 +15,11 @@ synopsis:               Very rough geometry shader support for OpenGL-2.4.0.1
 description:            A very rough implementation of support for geometry
                         shaders for use with OpenGL-2.4.0.1.  It does not
                         integrate very cleanly and is largely coded via cut
-                        and paste from the OpenGL package sources, but it is
-                        significantly more convenient than working with
-                        OpenGLRaw, and it's good enough for me until support
-                        for geometry shaders makes it into the OpenGL package.
+                        and paste from the OpenGL package sources, but despite
+                        its hackish nature it is good enough for me until
+                        support for geometry shaders makes it into the OpenGL
+                        package.  In any case it's significantly more
+                        convenient than working with OpenGLRaw.
 
 Library
   hs-source-dirs:       src

@@ -193,7 +193,7 @@ partitionM p = foldM select ([],[])
 setAttachedShaders :: Program -> ([VertexShader],[FragmentShader],[GeometryShader]) -> IO ()
 setAttachedShaders p (vs, fs, gs) = do
    currentIDs <- getAttachedShaderIDs p
-   let newIDs = map vshaderID vs ++ map fshaderID fs ++ map geometryShaderID gs
+   let newIDs = map vertexShaderID vs ++ map fragmentShaderID fs ++ map geometryShaderID gs
        program = programID p
    mapM_ (glAttachShader program) (newIDs \\ currentIDs)
    mapM_ (glDetachShader program) (currentIDs \\ newIDs)
@@ -202,10 +202,10 @@ toVertexShader :: GLuint -> VertexShader
 toVertexShader = unsafeCoerce
 toFragmentShader :: GLuint -> FragmentShader
 toFragmentShader = unsafeCoerce
-vshaderID :: VertexShader -> GLuint
-vshaderID = unsafeCoerce
-fshaderID :: FragmentShader -> GLuint
-fshaderID = unsafeCoerce
+vertexShaderID :: VertexShader -> GLuint
+vertexShaderID = unsafeCoerce
+fragmentShaderID :: FragmentShader -> GLuint
+fragmentShaderID = unsafeCoerce
 
 --------------------------------------------------------------------------------
 
