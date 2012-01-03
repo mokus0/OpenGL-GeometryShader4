@@ -48,7 +48,7 @@ deleteShaderNames = mapM_ (glDeleteShader . geometryShaderID)
 isShaderName :: GeometryShader -> IO Bool
 isShaderName = fmap unmarshalGLboolean . glIsShader . geometryShaderID
 
-unmarshalGLboolean :: Num a => a -> Bool
+unmarshalGLboolean :: (Num a, Eq a) => a -> Bool
 unmarshalGLboolean = (/= fromIntegral gl_FALSE)
 
 --------------------------------------------------------------------------------
