@@ -5,7 +5,7 @@ stability:              provisional
 cabal-version:          >= 1.2
 build-type:             Simple
 
-author:                 James Cook <james.cook@usma.edu>
+author:                 James Cook <mokus@deepbondi.net>
 maintainer:             None
 license:                PublicDomain
 homepage:               /dev/null
